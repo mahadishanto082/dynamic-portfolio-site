@@ -4,9 +4,34 @@
     Dashboard
 @endsection
 
+@section('_css')
+<style>
+.animated-greeting {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeSlideIn 1.5s forwards;
+  
+  font-weight: bold;
+  font-size: 2rem;
+  color: #333;
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+</style>
+
+@endsection
+
 @section('page-info')
+<h1 class="animated-greeting text-center" >Welcome back, Admin!</h1>
     <div class="br-pagetitle">
+   
         <i class="icon ion-ios-home-outline"></i>
+        
         <div>
             <h4>Dashboard</h4>
             <p class="mg-b-0">Here is today's information</p>
@@ -25,6 +50,8 @@
                 <div id="ch1" class="ht-50 tr-y-1"></div>
             </div>
         </div><!-- col-3 -->
+
+
 
         <div class="col-sm-6 col-xl-3">
             <div class="bg-info rounded overflow-hidden">
@@ -56,4 +83,6 @@
             </div>
         </div><!-- col-3 -->
     </div>
+
+    
 @endsection
