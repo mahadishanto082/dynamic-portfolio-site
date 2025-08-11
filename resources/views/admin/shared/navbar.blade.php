@@ -1,15 +1,19 @@
 
 
 <style>
+    .br-sideleft-menu{
+        background-color:#1cae9c; /* light background for better contrast */
+    }
     .br-menu-item {
   margin-bottom: 35px;
+  background-color: #18a4b3;
  /* increases vertical spacing between items */
 }
 
 .br-menu-link {
   padding: 15px 20px; /* adds more padding inside each menu link */
   /* existing styles you have here */
-  
+  background-color: aqu; /* ensures the background is transparent */
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -24,7 +28,7 @@
 <div class="br-sideleft sideleft-scrollbar " >
     <label class="sidebar-label pd-x-10 mg-t-20 op-3" >Navigation</label>
     <ul class="br-sideleft-menu "   >
-        <li class="br-menu-item " style="background-color:red;">
+        <li class="br-menu-item " ">
             <a href="{{ route('admin.dashboard') }}"
                class="br-menu-link {{ Request::routeIs('admin.dashboard*') ? 'active' : '' }}"  style="font-size: 1.3rem; font-weight: 600; display: flex; align-items: center;">
                 <i class="menu-item-icon icon ion-ios-home-outline tx-24"></i>
