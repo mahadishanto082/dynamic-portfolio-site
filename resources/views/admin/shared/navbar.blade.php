@@ -1,26 +1,57 @@
 
 
 <style>
-    .br-sideleft-menu{
-        background-color:#1cae9c; /* light background for better contrast */
-    }
-    .br-menu-item {
-  margin-bottom: 35px;
-  background-color: #18a4b3;
- /* increases vertical spacing between items */
+/* --- Sidebar Menu Cleanup --- */
+
+/* Remove background from all states (normal, active, hover) */
+.br-menu-link,
+.br-menu-link.active,
+.br-menu-link:hover {
+    background-color: transparent !important;
+    background-image: none !important;
+    color: #fff !important;
+    box-shadow: none !important;
 }
 
+/* Adjust spacing between menu items */
+.br-menu-item {
+    margin-bottom: 15px; /* increase/decrease vertical gap */
+}
+
+/* Padding and alignment for menu links */
 .br-menu-link {
-  padding: 15px 20px; /* adds more padding inside each menu link */
-  /* existing styles you have here */
-  background-color: aqu; /* ensures the background is transparent */
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  font-size: 1.3rem;
-  font-weight: 200;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+/* Icon spacing */
+.menu-item-icon {
+    margin-right: 10px;
+}
+
+/* Collapsed sidebar: center icons */
+.br-sideleft .br-menu-link {
+    justify-content: center;
+}
+
+/* Expanded sidebar: align icons and text normally */
+.br-sideleft.expanded .br-menu-link {
+    justify-content: flex-start;
+}
+
+/* Optional: subtle hover effect */
+.br-menu-link:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Optional: subtle indicator for active link */
+.br-menu-link.active {
+    border-left: 3px solid #1cae9c;
+    padding-left: 17px; /* compensate for border */
+}
 
 </style>
 
@@ -39,7 +70,7 @@
         <li class="br-menu-item">
             <a href="#"
                class="br-menu-link {{ Request::routeIs('admin.dashboard*') ? 'active' : '' }}" style="font-size: 1.3rem; font-weight: 600; display: flex; align-items: center;">
-               <i class="menu-item-icon icon ion-ios-paper-outline tx-24"></i>
+               <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
             <span class="menu-item-label">Header Content</span>
 
             </a>
